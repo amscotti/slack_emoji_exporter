@@ -2,8 +2,8 @@
 A tool to export Slack Workspace's Emojis
 
 ## To Build
-* Install Nim
-* Run `nim c slack_emoji_exporter.nim`
+* Install Nim v1.8.0
+* Run `nimble build`
 
 ## To Run
 * Create an API tokens for Slack from the [Legacy Tokens page](https://api.slack.com/custom-integrations/legacy-tokens)
