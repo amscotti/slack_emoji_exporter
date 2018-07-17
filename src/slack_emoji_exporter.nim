@@ -16,15 +16,16 @@ proc downloadImages(token: string) =
   let emojiData = client.getContent(SlackApiEmojiEndpoint).parseJson()
 
   let dateFolder = local(getTime()).format(TimestampFormat)
+  let outputPath = joinPath("output", dateFolder)
 
-  discard existsOrCreateDir(dateFolder)
+  createDir(outputPath)
 
   for item in emojiData["emoji"].pairs:
     let imageUrl = item.val.getStr
     if not imageUrl.contains("alias:"):
       let imageExt = imageUrl.splitPath().tail.splitFile().ext
       echo fmt"Downloading '{item.key}' as {item.key & imageExt}"
-      client.downloadFile(imageUrl, joinPath(dateFolder, item.key & imageExt))
+      client.downloadFile(imageUrl, joinPath(outputPath, item.key & imageExt))
 
 proc main() =
   if existsEnv(SlackApiTokenEnvironmentVariable):

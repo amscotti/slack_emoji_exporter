@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "Anthony Scotti"
 description   = "A tool to export Slack Workspace\'s Emojis"
 license       = "MIT"
