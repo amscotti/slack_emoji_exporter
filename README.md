@@ -2,7 +2,7 @@
 A tool to export Slack Workspace's Emojis
 
 ## To Build
-* Install Nim v1.8.0
+* Install Nim v0.19.0
 * Run `nimble build`
 
 ## To Run
