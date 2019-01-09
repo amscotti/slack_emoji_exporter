@@ -1,4 +1,4 @@
-FROM nimlang/nim:0.18.0-alpine
+FROM nimlang/nim:0.19.0-alpine
 WORKDIR /build/
 COPY . /build/
 RUN nimble build
